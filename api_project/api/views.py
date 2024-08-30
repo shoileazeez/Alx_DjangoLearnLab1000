@@ -1,9 +1,9 @@
-from rest_framework.generics import ListAPIView
-from .models import Book
-from .serializers import BookSerializer
+from rest_framework import viewsets
+from .models import MyModel
+from .serializers import MyModelSerializer
 
-class BookList(ListAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer
+class MyModelViewSet(viewsets.ModelViewSet):
+    queryset = MyModel.objects.all()
+    serializer_class = MyModelSerializer
 
 # Create your views here.
