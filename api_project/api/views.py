@@ -5,6 +5,14 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+class BookList(generics.ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
 
 class BookViewSet(APIView):
     queryset = Book.objects.all()
